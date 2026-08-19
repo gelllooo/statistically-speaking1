@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primary Source | {{ study.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="document-shell primary-source-page" id="primary-source-page">
+        <a class="archive-link source-interface" href="{{ url_for('results') }}">&larr; RETURN TO FINAL FINDINGS</a>
+        <header class="primary-source-intro source-interface">
+            <p class="document-label">RESEARCH DOCUMENT 09</p>
+            <h1>PRIMARY SOURCE</h1>
+            <p class="subtitle">“The researcher's recorded statement.”</p>
+            <div class="article-rule"></div>
+            <p>Written analysis has reached its limit.</p>
+            <p>Some findings are better communicated directly.</p>
+            <p>The researcher has therefore submitted a primary source.</p>
+        </header>
+        {% if video_available %}
+        <section class="recorded-statement" aria-labelledby="recorded-statement-heading">
+            <div class="source-player-heading source-interface">
+                <p class="eyebrow">PRIMARY SOURCE</p>
+                <h2 id="recorded-statement-heading">RECORDED STATEMENT</h2>
+            </div>
+            <video id="confession-video" class="confession-video" controls preload="metadata">
+                <source src="{{ url_for('static', filename='videos/confession.mp4') }}" type="video/mp4">
+                Your browser does not support HTML5 video playback.
+            </video>
+            <p class="watch-note source-interface">Please watch until the end.</p>
+        </section>
+        <section class="final-question" id="final-question" hidden aria-live="polite" aria-labelledby="final-question-heading">
+            <p class="document-label">PRIMARY SOURCE CONCLUDED.</p>
+            <p class="question-introduction">The researcher has one final question.</p>
+            <p class="eyebrow final-question-label">FINAL QUESTION</p>
+            <h2 id="final-question-heading">Pwede ba akong manligaw?</h2>
+            <p class="response-prompt">What do you think?</p>
+            <div class="response-options" role="group" aria-label="Response options">
+                <button type="button" class="response-choice" data-response="yes">I'd like to give it a chance.</button>
+                <button type="button" class="response-choice" data-response="unsure">I'm not sure yet.</button>
+                <button type="button" class="response-choice" data-response="no">I don't feel the same way.</button>
+            </div>
+            <div class="response-message" id="response-message" hidden aria-live="polite"></div>
+        </section>
+        {% else %}
+        <section class="video-fallback" role="status">
+            <p class="eyebrow">DEVELOPER NOTICE</p>
+            <h2>Recorded statement unavailable.</h2>
+            <p>The expected file was not found at <code>static/videos/confession.mp4</code>. Add the existing MP4 there to enable this primary source.</p>
+        </section>
+        {% endif %}
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

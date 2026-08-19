@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire 01 | {{ study.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="document-shell questionnaire-page">
+        <header class="masthead">
+            <a class="archive-link" href="{{ url_for('respondent_profile') }}">← RESPONDENT INTAKE</a>
+            <p id="question-progress" class="progress-indicator" aria-live="polite">QUESTION 01 / 08</p>
+        </header>
+
+        <section class="questionnaire-intro" aria-labelledby="questionnaire-title">
+            <p class="document-label">RESEARCH INSTRUMENT</p>
+            <h1 id="questionnaire-title">QUESTIONNAIRE 01</h1>
+            <p>Please answer honestly. The researcher has absolutely no intention of judging your responses.</p>
+        </section>
+
+        <section class="question-card" aria-live="polite">
+            <form id="questionnaire-form" novalidate>
+                <p id="question-number" class="question-number">QUESTION 01</p>
+                <h2 id="question-text"></h2>
+                <div id="question-input"></div>
+                <p id="question-error" class="form-error" role="alert"></p>
+                <div class="question-actions">
+                    <button id="previous-question" class="quiet-button" type="button">← PREVIOUS</button>
+                    <button id="next-question" class="button-link" type="submit">NEXT QUESTION <span aria-hidden="true">→</span></button>
+                </div>
+            </form>
+            <div id="questionnaire-complete" class="completion-message" data-analysis-url="{{ url_for('analysis') }}" hidden>
+                <p class="document-label">INSTRUMENT COMPLETE</p>
+                <h2>RESPONSES RECEIVED</h2>
+                <p>Thank you, Respondent.</p>
+                <p>Your responses have been successfully recorded.</p>
+                <p>The research team will now analyze the available data.</p>
+                <p class="analysis-redirect-status">Preparing the analysis module...</p>
+            </div>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

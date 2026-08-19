@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract | {{ study.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="document-shell study-page">
+        <header class="masthead">
+            <a class="archive-link" href="{{ url_for('home') }}">← ARCHIVE COVER</a>
+            <p class="progress-indicator">01 / 07 &nbsp; ABSTRACT</p>
+        </header>
+
+        <article class="research-document">
+            <p class="document-label">RESEARCH DOCUMENT 01</p>
+            <h1>ABSTRACT</h1>
+            <div class="article-rule"></div>
+            <div class="article-copy">
+                {% for paragraph in study.abstract %}
+                <p>{{ paragraph }}</p>
+                {% endfor %}
+            </div>
+
+            <aside class="researcher-note">
+                <p class="note-label">RESEARCHER'S NOTE</p>
+                {% for paragraph in study.researcher_note %}
+                <p>{{ paragraph }}</p>
+                {% endfor %}
+            </aside>
+
+            <a class="button-link" href="{{ url_for('respondent_profile') }}">PROCEED TO RESPONDENT INTAKE <span aria-hidden="true">→</span></a>
+        </article>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

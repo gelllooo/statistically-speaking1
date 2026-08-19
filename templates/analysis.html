@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respondent Analysis | {{ study.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main id="analysis-page" class="document-shell analysis-page">
+        <header class="masthead">
+            <p class="document-label">RESEARCH ANALYSIS MODULE</p>
+            <p class="progress-indicator">03 / 07 &nbsp; ANALYSIS</p>
+        </header>
+
+        <section id="analysis-loading" class="analysis-loading" aria-live="polite">
+            <p class="document-label">ANALYZING RESPONDENT...</p>
+            <h1>PROCESSING AVAILABLE DATA</h1>
+            <div id="analysis-lines" class="analysis-lines"></div>
+        </section>
+
+        <section id="analysis-results" class="analysis-results" hidden>
+            <p class="document-label">CREATIVE RESEARCH ANALYSIS</p>
+            <h1>RESPONDENT ANALYSIS</h1>
+            <p class="lead-copy">Preliminary findings based on submitted responses.</p>
+
+            <div class="respondent-identity">
+                <span>RESPONDENT #001</span>
+                <strong id="respondent-display-name">UNSPECIFIED</strong>
+            </div>
+
+            <p class="fictional-disclaimer">These scores are fictional elements of the interactive experience and are not psychological or scientific measurements.</p>
+            <div id="metric-list" class="metric-list" aria-label="Fictional creative research metrics"></div>
+
+            <section class="finding-section">
+                <p class="document-label">PRELIMINARY FINDING #01</p>
+                <h2>The respondent demonstrates a statistically interesting combination of intellectual curiosity and conversational compatibility.</h2>
+                <p>Further investigation is recommended.</p>
+            </section>
+
+            <section class="finding-section correlations-section">
+                <p class="document-label">CORRELATIONS DETECTED</p>
+                <ul id="correlation-list" class="correlation-list"></ul>
+            </section>
+
+            <section class="objectivity-section">
+                <p class="document-label">RESEARCHER OBJECTIVITY</p>
+                <strong>0.00%</strong>
+                <p class="objectivity-status">STATUS: COMPROMISED</p>
+                <p>Unexpected methodological complication detected.</p>
+                <p>The researcher appears to have developed an unusual level of personal interest in the subject.</p>
+            </section>
+
+            <section class="finding-section final-finding">
+                <p class="document-label">FINAL PRELIMINARY FINDING</p>
+                <p>The respondent's answers have produced several unexpected correlations.</p>
+                <p>Unfortunately, the available data raises more questions than it answers.</p>
+                <p>Further discussion is required.</p>
+                <a id="discussion-link" class="button-link" href="{{ url_for('discussion') }}">CONTINUE TO DISCUSSION <span aria-hidden="true">→</span></a>
+            </section>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

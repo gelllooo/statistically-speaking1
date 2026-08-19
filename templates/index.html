@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ study.title }} | Research Archive</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="document-shell cover-page">
+        <header class="masthead">
+            <p class="document-label">RESEARCH ARCHIVE / CASE FILE 01</p>
+            <p class="status-mark">STATUS: ONGOING</p>
+        </header>
+
+        <section class="cover-introduction" aria-labelledby="study-title">
+            <p class="eyebrow">A preliminary interdisciplinary inquiry</p>
+            <h1 id="study-title">{{ study.title }}</h1>
+            <p class="subtitle">{{ study.subtitle }}</p>
+        </section>
+
+        <section class="metadata-panel" aria-label="Research metadata">
+            <div class="metadata-item">
+                <span>RESEARCHER</span>
+                <strong>{{ study.researcher }}</strong>
+            </div>
+            <div class="metadata-item">
+                <span>SUBJECT</span>
+                <strong>{{ study.subject }}</strong>
+            </div>
+            {% for label, value in study.metadata %}
+            <div class="metadata-item">
+                <span>{{ label }}</span>
+                <strong>{{ value }}</strong>
+            </div>
+            {% endfor %}
+        </section>
+
+        <section class="abstract-preview" aria-labelledby="abstract-preview-title">
+            <div class="section-heading">
+                <p>DOCUMENT PREVIEW</p>
+                <h2 id="abstract-preview-title">ABSTRACT</h2>
+            </div>
+            {% for paragraph in study.abstract %}
+            <p>{{ paragraph }}</p>
+            {% endfor %}
+        </section>
+
+        <a class="button-link" href="{{ url_for('study') }}">BEGIN THE STUDY <span aria-hidden="true">→</span></a>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

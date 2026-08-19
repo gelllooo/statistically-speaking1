@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Findings | {{ study.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="document-shell findings-page">
+        <a class="archive-link" href="{{ url_for('control_group') }}">&larr; RETURN TO CONTROL GROUP</a>
+        <header class="findings-intro">
+            <p class="document-label">RESEARCH DOCUMENT 08</p>
+            <h1>FINAL FINDINGS</h1>
+            <p class="subtitle">“The conclusion the data was never supposed to reach.”</p>
+            <div class="article-rule"></div>
+            <p>After reviewing the respondent's answers, the observed conversational patterns, and the resulting correlations, the researcher has reached an unexpected conclusion.</p>
+            <p>The original hypothesis can no longer adequately explain the available evidence.</p>
+        </header>
+        <section class="hypothesis-card" aria-labelledby="original-hypothesis">
+            <p class="eyebrow">ORIGINAL HYPOTHESIS</p>
+            <h2 id="original-hypothesis">Interpersonal compatibility can be reasonably predicted by established preferences, expectations, and observable characteristics.</h2>
+            <p class="finding-status"><span>STATUS:</span> <strong>REJECTED</strong></p>
+        </section>
+        <section class="hypothesis-card revised-hypothesis" aria-labelledby="revised-hypothesis">
+            <p class="eyebrow">REVISED HYPOTHESIS</p>
+            <h2 id="revised-hypothesis">Sometimes, meeting a particular person changes the way we understand what we actually value in another person.</h2>
+            <p class="finding-status"><span>STATUS:</span> <strong>SUPPORTED BY OBSERVATION</strong></p>
+            <p class="creative-note">This is creative writing, not an actual scientific conclusion.</p>
+        </section>
+        <section class="findings-section" aria-labelledby="unexpected-variable">
+            <p class="eyebrow">THE UNEXPECTED VARIABLE</p>
+            <h2 id="unexpected-variable">A variable outside the original model.</h2>
+            <p>The researcher initially assumed that compatibility would depend on whether he matched a predetermined idea of the kind of person the respondent might choose.</p>
+            <p>Further observation complicated this assumption.</p>
+            <p>The researcher may not fit every expected category.</p>
+            <p>The researcher nevertheless found himself enjoying the respondent's company, conversations, humor, perspective, and presence more than any predetermined category could adequately explain.</p>
+        </section>
+        <section class="personal-findings" aria-labelledby="personal-observation">
+            <p class="eyebrow">RESEARCHER'S PERSONAL OBSERVATION</p>
+            <h2 id="personal-observation">A question the research design did not anticipate.</h2>
+            <p>At some point, the researcher stopped asking whether he fit the respondent's usual type.</p>
+            <p>He started asking a different question.</p>
+            <p class="personal-question">Why does this person matter to me this much?</p>
+            <p>The answer was not found in appearance, categories, preferences, or statistics.</p>
+            <p>It was found in the conversations.</p>
+            <p>In the intellectual banter.</p>
+            <p>In the chaos.</p>
+            <p>In the moments that somehow became memorable.</p>
+            <p>In the person behind all of it.</p>
+        </section>
+        <section class="limitation-reading" aria-labelledby="methodological-limitation">
+            <p class="eyebrow">METHODOLOGICAL LIMITATION</p>
+            <h2 id="methodological-limitation">The researcher has identified a significant methodological limitation.</h2>
+            <div class="objectivity-reading" aria-label="Researcher objectivity: 0.00 percent. Status: compromised.">
+                <span>RESEARCHER OBJECTIVITY</span>
+                <strong>0.00%</strong>
+                <b>STATUS: COMPROMISED</b>
+            </div>
+            <p>The researcher can no longer reasonably claim that this investigation is purely academic.</p>
+        </section>
+        <section class="data-limit" aria-labelledby="statistical-limit">
+            <p class="eyebrow">LIMITATION OF STATISTICAL ANALYSIS</p>
+            <h2 id="statistical-limit">Where the data stops.</h2>
+            <p>Statistics can identify patterns.</p>
+            <p>Statistics can describe correlations.</p>
+            <p>Statistics can organize observations.</p>
+            <p>But statistics cannot adequately explain why one particular person becomes important.</p>
+            <p class="pause-line">The available data is therefore insufficient.</p>
+            <p>Additional evidence is required.</p>
+        </section>
+        <section class="primary-source-note" aria-labelledby="final-research-note">
+            <p class="eyebrow">FINAL RESEARCH NOTE</p>
+            <h2 id="final-research-note">A different kind of documentation.</h2>
+            <p>The researcher has therefore decided to abandon conventional academic documentation for the next stage of the study.</p>
+            <p>Some findings are better communicated directly.</p>
+            <p>The researcher has submitted a primary source.</p>
+            <div class="source-record">
+                <span>PRIMARY SOURCE</span>
+                <strong>Researcher's recorded statement.</strong>
+            </div>
+            <a class="button-link primary-source-button" href="{{ url_for('primary_source') }}">ACCESS PRIMARY SOURCE <span aria-hidden="true">&rarr;</span></a>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

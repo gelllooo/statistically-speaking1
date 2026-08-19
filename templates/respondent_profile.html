@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respondent Intake | {{ study.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="document-shell intake-page">
+        <header class="masthead">
+            <a class="archive-link" href="{{ url_for('study') }}">← RESEARCH DOCUMENT 01</a>
+            <p class="progress-indicator">02 / 07 &nbsp; INTAKE</p>
+        </header>
+
+        <section class="intake-content" aria-labelledby="intake-title">
+            <p class="document-label">RESEARCH PARTICIPANT RECORD</p>
+            <h1 id="intake-title">RESPONDENT INTAKE FORM</h1>
+            <p class="lead-copy">Before the study can proceed, the respondent must provide a few basic details.</p>
+            <p class="privacy-note">All questions are optional. Please provide only information you're comfortable sharing.</p>
+
+            <form id="respondent-profile" class="intake-form" novalidate>
+                <div class="form-field">
+                    <label for="respondent-name">NAME</label>
+                    <input id="respondent-name" name="name" type="text" placeholder="Your preferred name" autocomplete="name">
+                </div>
+                <div class="form-field">
+                    <label for="respondent-nickname">NICKNAME</label>
+                    <input id="respondent-nickname" name="nickname" type="text" placeholder="What should the researcher call you?" autocomplete="nickname">
+                </div>
+                <div class="form-field">
+                    <label for="free-time">FAVORITE WAY TO SPEND FREE TIME</label>
+                    <select id="free-time" name="free_time">
+                        <option value="">Select an option (optional)</option>
+                        <option>Reading or watching something interesting</option>
+                        <option>Going out with people I like</option>
+                        <option>Making or learning something</option>
+                        <option>Resting with absolutely no academic justification</option>
+                        <option>Something else entirely</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="current-mood">CURRENT MOOD</label>
+                    <select id="current-mood" name="mood">
+                        <option value="">Select an option (optional)</option>
+                        <option>Thriving</option>
+                        <option>Surviving</option>
+                        <option>Existing</option>
+                        <option>Running on questionable decisions</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="personality-word">PERSONALITY IN ONE WORD</label>
+                    <input id="personality-word" name="personality" type="text" placeholder="One carefully selected word">
+                </div>
+
+                <div class="form-submit-row">
+                    <p>READY TO PARTICIPATE?</p>
+                    <button class="button-link" type="submit">SUBMIT RESPONDENT PROFILE <span aria-hidden="true">→</span></button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
